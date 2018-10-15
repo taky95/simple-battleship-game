@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title>Battleship</title>
+<link rel="stylesheet" href="style.css">
+<script src="/battleship.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<link rel="stylesheet" href="toggle-switch.css">
+
+</head>
+<script>
+console.log("started");
+	window.onload = function(){
+	//document.getElementById("btn").addEventListener("click", retrieveName);
+	//document.getElementById("btn").addEventListener("click", unlockMap);
+	document.getElementById("start").addEventListener("click", initGame);
+	document.getElementById("ready").addEventListener("click", ready);
+	document.getElementById("reset").addEventListener("click", reset);
+	document.getElementById("next").addEventListener("click", next);
+	}
+</script>
+<body>
+	<div id="content">
+		<h1>Simple Battleship Game</h1>
+		<div id="userBoard">
+			<div id="info"><p>Game Info:</p></div>
+			
+			<form id="user" name="user">
+				<p>Please enter your name and choose game mode to begin the game!</p>
+				<label>Name: </label>
+				<input type="text" name="name" value="1P Name" /></br>
+				<label class="switch-light switch-candy" onclick="">
+					
+					<input id="mode" type="checkbox" checked>
+					
+					<strong>
+						Game mode: 
+					</strong>
+					
+					
+					<span aria-hidden="true">
+						<span>CPU</span>
+						<span>PvP</span>
+						<a></a>
+					</span>
+					
+					
+				</label>
+				<div class="center">
+					<input type="button" id="start" class="btn" value="Play!" />
+				</div>
+			</form>
+			<form id="user2" name="user2">
+				<p>Player2, Please enter your name.</p>
+				<label>Name: </label>
+				<input type="text" name="name" value="2P Name" /></br>
+				
+				<div class="center">
+					<input type="button" id="next" class="btn" value="Next" />
+				</div>
+			</form>
+			
+			<form id="boats" name="boats">
+				<p>Please select a boat and click on the map where you want to place your boats.</p>
+				
+				<div class="center switch-toggle switch-material">
+					<input type="radio" name="radio" class="radio" id="boat1" value="carrier"checked/>
+					<label class="options" id="label1" for="boat1" onclick="">Carrier</label>
+					
+					<input type="radio" name="radio" class="radio" id="boat2" value="battleship"/>
+					<label class="options" id="label2" for="boat2" onclick="">Battleship</label>
+					
+					<input type="radio" name="radio" class="radio" id="boat3" value="cruiser"/>
+					<label class="options" id="label3" for="boat3" onclick="">Cruiser</label>
+					
+					<input type="radio" name="radio" class="radio" id="boat4" value="destroyer"/>
+					<label class="options" id="label4" for="boat4" onclick="">Destroyer</label>
+					
+					<a></a>
+				</div>
+				<div class="center">
+					<input type="button" id="reset" class="btn" value="Reset" />
+					<input type="button" id="ready" class="btn" value="Ready" />
+				</div>
+			</form>
+			<div id="gamescreen"><p>Now, click on oponent's map to fire.</p></div>
+		</div>
+		
+		
+		
+		<div class="gameBoard" id="p1"></div>
+		<div class="gameBoard" id="p2"></div>
+	</div>
+<script>
+	drawGameBoard("p1");
+	drawGameBoard("p2");
+</script>
+</body>
+</html>

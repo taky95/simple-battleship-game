@@ -1,0 +1,174 @@
+/*
+*
+* Author: Takumi Minohara
+* Last modified: Oct 14, 2018
+*
+*/
+
+@keyframes show{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes fade{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+body{
+    margin:0;
+    padding:0;
+    width: 100%;
+    background: url("/img/bg.jpg")  no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+#content{
+    margin: 0 auto;
+    min-width: 960px;
+    max-width: 1080px;
+    padding: 250px 100px 250px 100px;
+    background-color: rgba(247, 247, 247, 0.65);
+}
+
+#userBoard{
+    float: right;
+    border: 1px solid rgba(206, 206, 206, 1);
+    min-height: 500px;
+    min-width: 200px;
+    max-width: 360px;
+    background-color: rgba(247, 247, 247, 1);
+    padding: 10px;
+    margin-right: 50px;
+}
+
+#info{
+    background-color: #E5EAEA;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#user{
+    display: block;
+    padding: 50px 0;
+}
+#user.fade{
+    display: none;
+    animation: fade 1s linear 0s;
+}
+
+#user.show{
+    display: block;
+    animation: show 1s linear 0s;
+}
+
+#user2{
+    padding: 50px 0;
+    display: none;
+
+}
+#user2.fade{
+    display: none;
+    animation: fade 1s linear 0s;
+}
+
+#user2.show{
+    display: block;
+    animation: show 1s linear 0s;
+}
+
+#gamescreen{
+    display: none;
+
+}
+#gamescreen.fade{
+    display: none;
+    animation: fade 1s linear 0s;
+}
+
+#gamescreen.show{
+    display: block;
+    animation: show 1s linear 0s;
+}
+
+#boats{
+    padding: 50px 0;
+    display: none;
+}
+
+#boats.show{
+    display: block;
+    animation: show 1s linear 0s;
+}
+
+#boats input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
+}
+
+.center{
+    text-align: center;
+    margin: 20px 0;
+}
+
+.btn{
+    font-size: 25px;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 1s;
+    font-family: 'Share Tech Mono', monospace;
+}
+
+.btn:hover{
+    background-color: rgb(204, 204, 204);
+}
+
+#ready{
+    pointer-events: none;
+    opacity: 0.4;
+    transition: opacity 1s;
+}
+
+.gameBoard{
+    display: inline-grid;
+    grid-template-columns: repeat(10, 50px);
+    grid-template-rows: repeat(10, 50px);
+    background-color: #2196F3;
+    padding: 10px;
+    pointer-events: none;
+    opacity: 0.4;
+    margin-bottom: 15px;
+}
+
+.gridItem{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.gridItem p{
+    margin: 0;
+    position: relative;
+    top: -15px;
+    left: -3px;
+}
+
+.gridItem.ship{
+    background-color: grey;
+}
+
+.gridItem.hit{
+    background-color: red;
+}
